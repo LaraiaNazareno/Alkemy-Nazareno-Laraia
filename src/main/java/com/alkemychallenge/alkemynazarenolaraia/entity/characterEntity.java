@@ -4,6 +4,9 @@ import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "characters")
 @Getter
@@ -22,7 +25,7 @@ public class characterEntity {
 
     private Long weight;
 
-  //  @ManyToMany(mappedBy = "characters",cascade = CascadeType.ALL)
- //   private List<movieEntity> movies = new ArrayList<>();
+    @ManyToMany(mappedBy = "characters",cascade = CascadeType.ALL)
+    private List<movieEntity> movies = new ArrayList<>();
 
 }
