@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "a1897fa2-2610-4ea5-8c3d-870b35a631b2",
+		"name": "AlkemyChallengePostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pos genre",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTUxNzAsImlhdCI6MTYzODk1OTE3MH0.SqpEKAztTCFG_gkqM8TttLECskVGsvskYkA8lyQFR14",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"terro\",\r\n    \"image\":\"/usr/tmp/img.jpg\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/genre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"genre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"asd/asd/asd/img.jpg\",\r\n    \"title\": \"A harry potter 7\",\r\n   \"creationDate\": \"2010-09-22\",\r\n   \"rating\":5,\r\n   \"genreid\":4,\r\n   \"characters\":[\r\n       {\r\n            \"name\": \"voldemor\",\r\n            \"image\": \"sd/asd/img.jpg \",\r\n            \"age\": 200,\r\n            \"weight\": 20,\r\n            \"history\": \"asndjansdjansd\"\r\n       }\r\n\r\n\r\n   ]\r\n   \r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pos character",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"harry\",\r\n    \"image\": \"sd/asd/img.jpg \",\r\n    \"age\": 15,\r\n    \"weight\": 80,\r\n    \"history\": \"asndjansdjansd\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "characters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTUzNzAsImlhdCI6MTYzODk1OTM3MH0.Z432ufR3wWez6MEAJgfTPHRAxUXVhIOInNQS3cGd4mw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/characters?Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTUxNzAsImlhdCI6MTYzODk1OTE3MH0.SqpEKAztTCFG_gkqM8TttLECskVGsvskYkA8lyQFR14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTUxNzAsImlhdCI6MTYzODk1OTE3MH0.SqpEKAztTCFG_gkqM8TttLECskVGsvskYkA8lyQFR14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "character id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/characters/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "character filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/characters/filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "18",
+							"disabled": true
+						},
+						{
+							"key": "movies",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "her",
+							"disabled": true
+						},
+						{
+							"key": "weight",
+							"value": "80",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del character ",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTUzNzAsImlhdCI6MTYzODk1OTM3MH0.Z432ufR3wWez6MEAJgfTPHRAxUXVhIOInNQS3cGd4mw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/characters/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTQ0MjgsImlhdCI6MTYzODk1ODQyOH0.qoGIEvP-eyOtbg-G_0gThjRnzoTokJW6H9f4SjN_Qio",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYXJhaWFuYXphcmVub0BnbWFpbC5jb20iLCJleHAiOjE2Mzg5OTM2NzAsImlhdCI6MTYzODk1NzY3MH0.Tr7DjDP2R_g2k2B_X8yWaEB_z9IujuU2uupqSjsdubw",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies id ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post movie_characters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movies/2/characters/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"2",
+						"characters",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"username\":\"laraianazareno@gmail.com\",\r\n   \"password\":\"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"username\":\"laraianazareno@gmail.com\",\r\n   \"password\":\"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies/filter?title&order=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": null
+						},
+						{
+							"key": "creationDate",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

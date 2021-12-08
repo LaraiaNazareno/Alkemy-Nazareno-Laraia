@@ -3,6 +3,8 @@ package com.alkemychallenge.alkemynazarenolaraia.entity;
 import javax.persistence.*;
 import lombok.Getter;
 import  lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -10,14 +12,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "movie")
+//@Table(name = "movie")
 @Getter
 @Setter
 
-public class movieEntity {
+@SQLDelete(sql = "UPDATE movie SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
+
+public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
 
@@ -31,14 +36,10 @@ public class movieEntity {
 
     private Long rating;
 
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "genre_id")
+    private Genre genre;
 
-
-    @ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "genre_id",insertable = false, updatable = false)
-    private genreEntity genre;
-
-    @Column(name = "genre_id", nullable = false)
-    private Long genreId;
 
 
     @ManyToMany(
@@ -52,9 +53,17 @@ public class movieEntity {
             inverseJoinColumns =@JoinColumn(name = "character_id")
 
     )
-    private Set<characterEntity> characters = new HashSet<>();
+    private Set<Character> characters = new HashSet<>();
 
+    private boolean deleted = Boolean.FALSE;
 
+    public void addCharacter(Character character) {
+        this.characters.add(character);
+    }
+
+    public void removeCharacter(Character character) {
+        this.characters.remove(character);
+    }
 
 
 }
